@@ -8,7 +8,7 @@ public class Application {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "application_id")
-  private Integer id;
+  private Long id;
 
   @Column(name = "app_name", nullable = false)
   private String name;
@@ -20,18 +20,17 @@ public class Application {
   public Application() {
   }
 
-  public Application(String name, String owner,
-      String description) {
+  public Application(String name, String owner, String description) {
     this.name = name;
     this.owner = owner;
     this.description = description;
   }
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -62,11 +61,6 @@ public class Application {
 
   @Override
   public String toString() {
-    return "Application{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", owner=" + owner +
-        ", description='" + description + '\'' +
-        '}';
+    return "Application{" + "id=" + id + ", name='" + name + '\'' + ", owner=" + owner + ", description='" + description + '\'' + '}';
   }
 }
